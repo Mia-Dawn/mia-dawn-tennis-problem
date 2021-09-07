@@ -1,12 +1,8 @@
 package com.tenniscourts.reservations;
 
 import com.tenniscourts.schedules.ScheduleDTO;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.*;
 
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
@@ -31,9 +27,11 @@ public class ReservationDTO {
 
     private BigDecimal value;
 
+    @ApiModelProperty(required = true)
     @NotNull
     private Long scheduledId;
 
+    @ApiModelProperty(required = true)
     @NotNull
     private Long guestId;
 }

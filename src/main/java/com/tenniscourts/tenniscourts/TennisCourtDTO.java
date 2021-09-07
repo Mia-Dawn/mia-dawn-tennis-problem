@@ -1,14 +1,10 @@
 package com.tenniscourts.tenniscourts;
 
 import com.tenniscourts.schedules.ScheduleDTO;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.*;
 
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 @Getter
@@ -21,7 +17,8 @@ public class TennisCourtDTO {
 
     private Long id;
 
-    @NotNull
+    @ApiModelProperty(required = true)
+    @NotEmpty
     private String name;
 
     private List<ScheduleDTO> tennisCourtSchedules;

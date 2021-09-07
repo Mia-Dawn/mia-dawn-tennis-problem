@@ -1,0 +1,197 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 268435456 bytes for Failed to commit area from 0x00000000e0000000 to 0x00000000f0000000 of length 268435456.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (./src/hotspot/os/windows/os_windows.cpp:3311), pid=17160, tid=17272
+#
+# JRE version:  (11.0.12+7) (build )
+# Java VM: OpenJDK 64-Bit Server VM (11.0.12+7-LTS, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dorg.gradle.native=false -Xmx512m -Dfile.encoding=windows-1252 -Duser.country=US -Duser.language=en -Duser.variant -ea worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 1'
+
+Host: Intel(R) Core(TM) i5-4670K CPU @ 3.40GHz, 4 cores, 15G,  Windows 10 , 64 bit Build 18362 (10.0.18362.1110)
+Time: Mon Sep  6 18:50:40 2021 Central Daylight Time elapsed time: 0.009540 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001206f65d000):  JavaThread "Unknown thread" [_thread_in_vm, id=17272, stack(0x0000000e46d00000,0x0000000e46e00000)]
+
+Stack: [0x0000000e46d00000,0x0000000e46e00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x601d7a]
+V  [jvm.dll+0x78b45e]
+V  [jvm.dll+0x78cb2f]
+V  [jvm.dll+0x78d1f3]
+V  [jvm.dll+0x24bc58]
+V  [jvm.dll+0x5fef1a]
+V  [jvm.dll+0x5f39d5]
+V  [jvm.dll+0x3038fc]
+V  [jvm.dll+0x303782]
+V  [jvm.dll+0x3084a6]
+V  [jvm.dll+0x34d5ff]
+V  [jvm.dll+0x34d030]
+V  [jvm.dll+0x2e0a08]
+V  [jvm.dll+0x2e1b66]
+V  [jvm.dll+0x7667e7]
+V  [jvm.dll+0x767f6f]
+V  [jvm.dll+0x35a389]
+V  [jvm.dll+0x749870]
+V  [jvm.dll+0x3c1fbf]
+V  [jvm.dll+0x3c4491]
+C  [jli.dll+0x5207]
+C  [ucrtbase.dll+0x210b2]
+C  [KERNEL32.DLL+0x17c24]
+C  [ntdll.dll+0x6d4d1]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000001206d4a1fd0, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001206f677800 GCTaskThread "GC Thread#0" [stack: 0x0000000e46e00000,0x0000000e46f00000] [id=14476]
+  0x000001206f687000 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000000e46f00000,0x0000000e47000000] [id=21992]
+  0x000001206f688800 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000000e47000000,0x0000000e47100000] [id=14624]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff895ab00d7]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001206f659500] Heap_lock - owner thread: 0x000001206f65d000
+
+Heap address: 0x00000000e0000000, size: 512 MB, Compressed Oops mode: Non-zero based: 0x00000000e0000000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (1 events):
+Event: 0.006 Loaded shared library C:\Users\Tandrevian\.jdks\corretto-11.0.12\bin\zip.dll
+
+
+Dynamic libraries:
+0x00007ff676940000 - 0x00007ff67694d000 	C:\Users\Tandrevian\.jdks\corretto-11.0.12\bin\java.exe
+0x00007ff90dfe0000 - 0x00007ff90e1d0000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff90da30000 - 0x00007ff90dae2000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff90b1a0000 - 0x00007ff90b445000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff908ca0000 - 0x00007ff908d2f000 	C:\WINDOWS\SYSTEM32\apphelp.dll
+0x00007ff90be40000 - 0x00007ff90bf3a000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff8e9090000 - 0x00007ff8e90a9000 	C:\Users\Tandrevian\.jdks\corretto-11.0.12\bin\VCRUNTIME140.dll
+0x00007ff8e3500000 - 0x00007ff8e3517000 	C:\Users\Tandrevian\.jdks\corretto-11.0.12\bin\jli.dll
+0x00007ff90c0f0000 - 0x00007ff90c284000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff90b5d0000 - 0x00007ff90b5f1000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff9002c0000 - 0x00007ff900544000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.1256_none_9e7e379be45e40e2\COMCTL32.dll
+0x00007ff90db50000 - 0x00007ff90db76000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff90c2f0000 - 0x00007ff90c38e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff90afb0000 - 0x00007ff90b146000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff90c390000 - 0x00007ff90c6c6000 	C:\WINDOWS\System32\combase.dll
+0x00007ff90b530000 - 0x00007ff90b5ce000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff90cbb0000 - 0x00007ff90ccd0000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff90b450000 - 0x00007ff90b4d1000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff90cd40000 - 0x00007ff90cd6e000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ff8d75e0000 - 0x00007ff8d767b000 	C:\Users\Tandrevian\.jdks\corretto-11.0.12\bin\msvcp140.dll
+0x00007ff8957c0000 - 0x00007ff89631a000 	C:\Users\Tandrevian\.jdks\corretto-11.0.12\bin\server\jvm.dll
+0x00007ff90d980000 - 0x00007ff90da23000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff90dd70000 - 0x00007ff90de07000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff90df90000 - 0x00007ff90df98000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ff908a60000 - 0x00007ff908a84000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff903800000 - 0x00007ff90380a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff905cd0000 - 0x00007ff905cd9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff90ccd0000 - 0x00007ff90cd3f000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff9085e0000 - 0x00007ff90860d000 	C:\WINDOWS\SYSTEM32\winmmbase.dll
+0x00007ff90b150000 - 0x00007ff90b19a000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x00007ff90aec0000 - 0x00007ff90aed1000 	C:\WINDOWS\System32\kernel.appcore.dll
+0x00007ff8f6190000 - 0x00007ff8f61a0000 	C:\Users\Tandrevian\.jdks\corretto-11.0.12\bin\verify.dll
+0x00007ff8f57a0000 - 0x00007ff8f5994000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ff8f5770000 - 0x00007ff8f579a000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ff8e0690000 - 0x00007ff8e06b8000 	C:\Users\Tandrevian\.jdks\corretto-11.0.12\bin\java.dll
+0x00007ff8f03a0000 - 0x00007ff8f03aa000 	C:\Users\Tandrevian\.jdks\corretto-11.0.12\bin\jimage.dll
+0x00007ff8e05a0000 - 0x00007ff8e05b7000 	C:\Users\Tandrevian\.jdks\corretto-11.0.12\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\Tandrevian\.jdks\corretto-11.0.12\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.1256_none_9e7e379be45e40e2;C:\Users\Tandrevian\.jdks\corretto-11.0.12\bin\server
+
+VM Arguments:
+jvm_args: -Dorg.gradle.native=false -Xmx512m -Dfile.encoding=windows-1252 -Duser.country=US -Duser.language=en -Duser.variant -ea 
+java_command: worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 1'
+java_class_path (initial): C:\\Users\\Tandrevian\\.gradle\\caches\\5.2.1\\workerMain\\gradle-worker.jar;C:\\Users\\Tandrevian\\Documents\\InterviewCodeProjects\\tennis-courts-challenge\\build\\classes\\java\\test;C:\\Users\\Tandrevian\\Documents\\InterviewCodeProjects\\tennis-courts-challenge\\build\\resources\\test;C:\\Users\\Tandrevian\\Documents\\InterviewCodeProjects\\tennis-courts-challenge\\build\\classes\\java\\main;C:\\Users\\Tandrevian\\Documents\\InterviewCodeProjects\\tennis-courts-challenge\\build\\resources\\main;C:\\Users\\Tandrevian\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework.boot\\spring-boot-starter-data-jpa\\2.2.3.RELEASE\\9e9ddbb9341fa740cbf481b32b7c6adb7f1a5751\\spring-boot-starter-data-jpa-2.2.3.RELEASE.jar;C:\\Users\\Tandrevian\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework.boot\\spring-boot-starter-jersey\\2.2.3.RELEASE\\1c4f72f9afbacab51ccfbf2525307d873e9c4f19\\spring-boot-starter-jersey-2.2.3.RELEASE.jar;C:\\Users\\Tandrevian\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework.boot\\spring-boot-starter-web-services\\2.2.3.RELEASE\\52b4e514ae182cbbe19cdcfd1177073b8600e05\\spring-boot-starter-web-services-2.2.3.RELEASE.jar;C:\\Users\\Tandrevian\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework.boot\\spring-boot-starter-web\\2.2.3.RELEASE\\32087221ceb9861edbe293173d357688e7d2fc71\\spring-boot-starter-web-2.2.3.RELEASE.jar;C:\\Users\\Tandrevian\\.gradle\\caches\\modules-2\\files-2.1\\com.h2database\\h2\\1.4.197\\bb391050048ca8ae3e32451b5a3714ecd3596a46\\h2-1.4.197.jar;C:\\Users\\Tandrevian\\.gradle\\caches\\modules-2\\files-2.1\\io.springfox\\springfox-swagger2\\2.9.2\\362676bc7f4c6f9f1d568741becab0dfc198c898\\springfox-swagger2-2.9.2.jar;C:\\Users\\Tandrevian\\.gradle\\caches\\modules-2\\files-2.1\\io.springfox\\springfox-swagger-ui\\2.9.2\\d542382a88ff3ea8d4032c28b2b0325797fada7d\\springfox-swagger-ui-2.9.2.jar;C:\\Users\\Tandrevian\\.gradle\\caches\\modules-2\\files-2.1\\org.mapstruct\\mapstruc
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 268435456                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 536870912                                 {product} {command line}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5830732                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122913754                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122913754                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;D:\Livestreamer;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Git\cmd;C:\Program Files (x86)MiKTeX\miktex\bin\x64\;C:\Users\Tandrevian\AppData\Local\Microsoft\WindowsApps;
+USERNAME=Tandrevian
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 18362 (10.0.18362.1110)
+OS uptime: 22 days 23:15 hours
+
+CPU:total 4 (initial active 4) (4 cores per cpu, 1 threads per core) family 6 model 60 stepping 3 microcode 0x25, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, tsc, tscinvbit, bmi1, bmi2, fma
+
+Memory: 4k page, system-wide physical 16321M (3242M free)
+TotalPageFile size 30502M (AvailPageFile size 198M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 51M, peak: 307M
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.12+7-LTS) for windows-amd64 JRE (11.0.12+7-LTS), built on Jul 13 2021 17:58:36 by "Administrator" with unknown MS VC++:1916
+
+END.

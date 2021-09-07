@@ -1,11 +1,7 @@
 package com.tenniscourts.reservations;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.*;
 
 import javax.validation.constraints.NotNull;
 
@@ -17,9 +13,11 @@ import javax.validation.constraints.NotNull;
 @Data
 public class CreateReservationRequestDTO {
 
+    @ApiModelProperty(required = true)
     @NotNull
     private Long guestId;
 
+    @ApiModelProperty(required = true)
     @NotNull
     private Long scheduleId;
 
